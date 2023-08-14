@@ -1,3 +1,4 @@
-export default {
-  navigationBarTitleText: '答案'
-}
+export default definePageConfig({
+    navigationBarTitleText: '答案'
+  })
+  

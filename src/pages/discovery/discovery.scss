@@ -4,6 +4,7 @@
 .top-tab{
   width: 750px;
   height: 100px;
+  display: flex;
   background: #298DE5;
   color: #8CCEFD;
   font-size: 28px;
@@ -12,10 +13,22 @@
   margin: 0 0 8px 0;
   z-index: 9999;
 
+  .tab-item {
+    margin-right: 20rpx;
+  }
+
   .active {
     color: #ffffff;
     border-bottom: solid 2px #ffffff;
   }
+}
+
+.show {
+  display: block;
+}
+
+.hidden {
+  display: none;
 }
 
 .activity{

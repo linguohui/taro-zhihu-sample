@@ -4,14 +4,14 @@
         <view
           v-for="(item, index) in navTab"
           :key="index"
-          :class="currentNavtab === index ? 'toptab flex-item active' : 'toptab flex-item'"
+          :class="currentNavtab === index ? 'toptab tab-item flex-item active' : 'toptab tab-item flex-item'"
           @tap="switchTab(index)"
         >
           {{item}}
         </view>
       </view>
       <scroll-view scroll-y class='container discovery withtab'>
-        <view class='ctnt0' :hidden="currentNavtab==0 ? false : true">
+        <view :class="currentNavtab === 0 ? 'show' : 'hidden'">
             <swiper class='activity' indicatorDots='true' autoplay interval='5000' duration='500'>
               <swiper-item v-for="item in imgUrls" :key="item">
                   <image :src='item' class='slide-image' width='355' height='375' />
@@ -29,13 +29,13 @@
               :comment-num='item.commentNum'
             />
         </view>
-          <view class='txcenter' :hidden='currentNavtab==1 ? false : true'>
+          <view :class="currentNavtab === 1 ? 'show' : 'hidden'">
             <text>圆桌</text>
           </view>
-          <view class='txcenter' :hidden='currentNavtab==2 ? false : true'>
+          <view :class="currentNavtab === 2 ? 'show' : 'hidden'">
             <text>热门</text>
           </view>
-          <view class='txcenter' :hidden='currentNavtab==3 ? false : true'>
+          <view :class="currentNavtab === 3 ? 'show' : 'hidden'">
             <text>收藏</text>
           </view>
       </scroll-view>
@@ -162,6 +162,7 @@ export default {
   },
   methods: {
     switchTab(index, e) {
+      console.log('switchTab ', index)
       this.currentNavtab = index
     }
   }

@@ -1,3 +1,4 @@
-export default {
-  navigationBarTitleText: '发现'
-}
+export default definePageConfig({
+    navigationBarTitleText: '发现'
+  })
+  
